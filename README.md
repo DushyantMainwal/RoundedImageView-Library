@@ -1,7 +1,7 @@
 # RoundedImageView-Library
 Rounded Image View Library
 
-[![API](https://img.shields.io/badge/API-9%2B-blue.svg?style=flat)]  [![](https://jitpack.io/#DushyantMainwal/RoundedImageView-Library/0.1.0.svg)](https://jitpack.io/#DushyantMainwal/RoundedImageView-Library)
+[![API](https://img.shields.io/badge/API-9%2B-blue.svg?style=flat)]  [![](https://jitpack.io/#DushyantMainwal/RoundedImageView-Library.svg)](https://jitpack.io/#DushyantMainwal/RoundedImageView-Library)
 
 
 # Usage
