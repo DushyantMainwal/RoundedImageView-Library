@@ -3,6 +3,8 @@ Rounded ImageView Android Library
 
 [![API](https://img.shields.io/badge/API-9%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=9)  [![](https://jitpack.io/v/DushyantMainwal/RoundedImageView-Library.svg)](https://jitpack.io/#DushyantMainwal/RoundedImageView-Library) 
 
+# Screenshot
+![Screenshot](/screenshot.png)
 
 # Usage
 Step 1. Add the JitPack repository to your build file
