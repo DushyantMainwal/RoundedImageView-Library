@@ -1,7 +1,9 @@
 # RoundedImageView-Library
 Rounded ImageView Android Library
 
-[![API](https://img.shields.io/badge/API-9%2B-blue.svg?style=flat)]  [![](https://jitpack.io/#DushyantMainwal/RoundedImageView-Library.svg)](https://jitpack.io/#DushyantMainwal/RoundedImageView-Library)
+[![API](https://img.shields.io/badge/API-9%2B-blue.svg?style=flat)] 
+
+[![](https://jitpack.io/#DushyantMainwal/RoundedImageView-Library.svg)](https://jitpack.io/#DushyantMainwal/RoundedImageView-Library)
 
 
 # Usage
