@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="borderColor" format="color" />
+    <attr name="src" format="reference" />
+    <attr name="border" format="boolean" />
+    <attr name="borderWidth" format="dimension" />
+    <attr name="imagePadding" format="integer" />
+    <attr name="canvasPadding" format="integer" />
+    <attr name="scaleType">
+        <enum name="centerCrop" value="0" />
+        <enum name="fitXY" value="1" />
+    </attr>
+    <attr name="cornerRadius" format="integer" />
+
+    <attr name="cornerType">
+        <enum name="noCorner" value="-1" />
+        <enum name="topRight" value="1" />
+        <enum name="bottomRight" value="2" />
+        <enum name="bottomLeft" value="3" />
+        <enum name="topLeft" value="4" />
+    </attr>
+
+    <declare-styleable name="RoundedImageView">
+        <attr name="borderColor" />
+        <attr name="src" />
+        <attr name="border" />
+        <attr name="borderWidth" />
+        <attr name="scaleType" />
+        <attr name="imagePadding" />
+        <attr name="canvasPadding" />
+        <attr name="cornerType" />
+        <attr name="cornerRadius" />
+    </declare-styleable>
+
+</resources>
