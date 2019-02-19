@@ -270,6 +270,22 @@ public class RoundedImageView extends AppCompatImageView {
     }
 
     /**
+     * @param bitmap to set bitmap resource in imageview
+     */
+    public void setImageBitmap(Bitmap bitmap) {
+        this.imageResource = 0;
+        try {
+            this.bitmap = bitmap;
+        } catch (OutOfMemoryError error) {
+            this.bitmap = bitmap;
+            Log.e("Image Error: ", "Image is too large " + error.getMessage());
+        } catch (Exception e) {
+            Log.e("Image Error: ", e.getMessage());
+        }
+        invalidate();
+    }
+
+    /**
      * @param scaleType of the image
      *                  :
      *                  CENTER_CROP

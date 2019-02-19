@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         customImageView.setBorderColor(Color.DKGRAY);
         customImageView.setBorderWidth(40);
 
+        customImageView.setCornerRadius(30);
+
         List<RoundedImageView.CornerType> cornerTypes = new ArrayList<>();
         cornerTypes.add(RoundedImageView.CornerType.TOP_LEFT_CORNER);
         cornerTypes.add(RoundedImageView.CornerType.TOP_RIGHT_CORNER);
