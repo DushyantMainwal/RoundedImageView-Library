@@ -19,7 +19,7 @@ allprojects {
 Step 2. Add the dependency
 ```groovy
 dependencies {
-  compile 'com.github.DushyantMainwal:RoundedImageView-Library:0.1.0'
+  compile 'com.github.DushyantMainwal:RoundedImageView-Library:0.2.0'
  }
  ```
  
@@ -56,6 +56,8 @@ dependencies {
         customImageView.setBorder(true);
         customImageView.setBorderColor(Color.DKGRAY);
         customImageView.setBorderWidth(40);
+        
+        customImageView.setCornerRadius(30);
 
         List<RoundedImageView.CornerType> cornerTypes = new ArrayList<>();
         cornerTypes.add(RoundedImageView.CornerType.TOP_LEFT_CORNER);
