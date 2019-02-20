@@ -67,6 +67,19 @@ dependencies {
         customImageView.setCornerTypeList(cornerTypes);
 ```
 
+###Glide Implementation:
+```java
+         Glide.with(this)
+                .load("https://www.w3schools.com/w3css/img_lights.jpg")
+                .asBitmap()
+                .into(new SimpleTarget<Bitmap>() {
+                    @Override
+                    public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                        customImageView.setImageBitmap(resource);
+                    }
+                });
+```
+
 #Licence
 ```
 Copyright (c) 2016 Dushyant Mainwal
