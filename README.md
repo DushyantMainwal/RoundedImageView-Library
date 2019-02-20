@@ -1,5 +1,5 @@
 # RoundedImageView-Library
-Rounded ImageView Android Library
+Rounded ImageView Android Library, to set single or multiple corners on imageview. 
 
 [![API](https://img.shields.io/badge/API-9%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=9)  [![](https://jitpack.io/v/DushyantMainwal/RoundedImageView-Library.svg)](https://jitpack.io/#DushyantMainwal/RoundedImageView-Library) 
 
@@ -47,8 +47,9 @@ dependencies {
         RoundedImageView customImageView = findViewById(R.id.image_view);
         customImageView.setImageSource(R.drawable.rdjimage);
         customImageView.setImageScaleType(RoundedImageView.ScaleType.CENTRE_CROP);
+        
+        //For Single Corner
         customImageView.setCornerType(RoundedImageView.CornerType.BOTTOM_RIGHT_CORNER);
-        customImageView.setCornerRadius(40);
 
         customImageView.setImagePadding(20);
         customImageView.setCanvasPadding(50);
@@ -59,6 +60,7 @@ dependencies {
         
         customImageView.setCornerRadius(30);
 
+        //For Multiple Corners
         List<RoundedImageView.CornerType> cornerTypes = new ArrayList<>();
         cornerTypes.add(RoundedImageView.CornerType.TOP_LEFT_CORNER);
         cornerTypes.add(RoundedImageView.CornerType.TOP_RIGHT_CORNER);
