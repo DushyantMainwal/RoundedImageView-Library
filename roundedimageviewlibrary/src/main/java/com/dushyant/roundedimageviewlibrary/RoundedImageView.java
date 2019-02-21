@@ -9,6 +9,8 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -102,7 +104,7 @@ public class RoundedImageView extends AppCompatImageView {
                 e.printStackTrace();
             }
         }
-        
+
 //        imageResource = attrs.getAttributeResourceValue("http://schemas.android.com/apk/res/android", "src", 0);
 
         if (imageResource != 0) {
@@ -252,9 +254,21 @@ public class RoundedImageView extends AppCompatImageView {
     }
 
     /**
+     * @param drawable is drawable Id of image
+     */
+    @Override
+    public void setImageDrawable(Drawable drawable) {
+        if (drawable != null)
+            this.bitmap = drawableToBitmap(drawable);
+//        super.setImageDrawable(drawable);
+        invalidate();
+    }
+
+    /**
      * @param resId is drawable resource Id of image
      */
-    public void setImageSource(@DrawableRes int resId) {
+    @Override
+    public void setImageResource(@DrawableRes int resId) {
         this.imageResource = resId;
         if (imageResource != 0) {
             try {
@@ -272,16 +286,9 @@ public class RoundedImageView extends AppCompatImageView {
     /**
      * @param bitmap to set bitmap resource in imageview
      */
+    @Override
     public void setImageBitmap(Bitmap bitmap) {
-        this.imageResource = 0;
-        try {
-            this.bitmap = bitmap;
-        } catch (OutOfMemoryError error) {
-            this.bitmap = bitmap;
-            Log.e("Image Error: ", "Image is too large " + error.getMessage());
-        } catch (Exception e) {
-            Log.e("Image Error: ", e.getMessage());
-        }
+        this.bitmap = bitmap;
         invalidate();
     }
 
@@ -401,6 +408,28 @@ public class RoundedImageView extends AppCompatImageView {
         CornerType(int value) {
             this.value = value;
         }
+    }
+
+    private static Bitmap drawableToBitmap(Drawable drawable) {
+        if (drawable instanceof BitmapDrawable) {
+            return ((BitmapDrawable) drawable).getBitmap();
+        }
+
+        Bitmap bitmap;
+        int width = Math.max(drawable.getIntrinsicWidth(), 2);
+        int height = Math.max(drawable.getIntrinsicHeight(), 2);
+        try {
+            bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(bitmap);
+            drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+            drawable.draw(canvas);
+        } catch (Throwable e) {
+            e.printStackTrace();
+            Log.e("RoundedImageView", "Error while creating drawable!");
+            bitmap = null;
+        }
+
+        return bitmap;
     }
 }
 
