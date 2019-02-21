@@ -1,8 +1,8 @@
 package com.dushyant.roundedimagelibrary;
 
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.dushyant.roundedimageviewlibrary.RoundedImageView;
 
@@ -15,12 +15,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
         RoundedImageView customImageView = findViewById(R.id.image_view);
-        customImageView.setImageSource(R.drawable.rdjimage);
+        customImageView.setImageResource(R.drawable.rdjimage);
         customImageView.setImageScaleType(RoundedImageView.ScaleType.CENTRE_CROP);
         customImageView.setCornerType(RoundedImageView.CornerType.BOTTOM_RIGHT_CORNER);
         customImageView.setCornerRadius(40);
+
+//        Picasso.with(this).load("https://www.gstatic.com/webp/gallery/5.sm.jpg").into(customImageView);
+
+//        Glide.with(this)
+//                .load("https://www.w3schools.com/w3css/img_lights.jpg")
+//                .asBitmap()
+//                .into(new SimpleTarget<Bitmap>() {
+//                    @Override
+//                    public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+//                        customImageView.setImageBitmap(resource);
+//                    }
+//                });
 
         customImageView.setImagePadding(20);
         customImageView.setCanvasPadding(50);
