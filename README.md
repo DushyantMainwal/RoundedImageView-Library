@@ -45,7 +45,7 @@ dependencies {
 ###Java Implementation:
 ```java
         RoundedImageView customImageView = findViewById(R.id.image_view);
-        customImageView.setImageSource(R.drawable.rdjimage);
+        customImageView.setImageResource(R.drawable.rdjimage);
         customImageView.setImageScaleType(RoundedImageView.ScaleType.CENTRE_CROP);
         
         //For Single Corner
