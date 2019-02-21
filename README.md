@@ -19,7 +19,7 @@ allprojects {
 Step 2. Add the dependency
 ```groovy
 dependencies {
-  compile 'com.github.DushyantMainwal:RoundedImageView-Library:0.2.0'
+  compile 'com.github.DushyantMainwal:RoundedImageView-Library:0.3.0'
  }
  ```
  
@@ -45,7 +45,7 @@ dependencies {
 ###Java Implementation:
 ```java
         RoundedImageView customImageView = findViewById(R.id.image_view);
-        customImageView.setImageSource(R.drawable.rdjimage);
+        customImageView.setImageResource(R.drawable.rdjimage);
         customImageView.setImageScaleType(RoundedImageView.ScaleType.CENTRE_CROP);
         
         //For Single Corner
@@ -67,6 +67,11 @@ dependencies {
         customImageView.setCornerTypeList(cornerTypes);
 ```
 
+##Picasso Implementation:
+```java
+         Picasso.with(this).load("https://www.gstatic.com/webp/gallery/5.sm.jpg").into(customImageView);
+```
+
 ###Glide Implementation:
 ```java
          Glide.with(this)
@@ -76,6 +81,16 @@ dependencies {
                     @Override
                     public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
                         customImageView.setImageBitmap(resource);
+                    }
+                });
+                
+        //With Drawable
+        Glide.with(this)
+                .load("https://www.w3schools.com/w3css/img_lights.jpg")
+                .into(new SimpleTarget<GlideDrawable>() {
+                    @Override
+                    public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> glideAnimation) {
+                        customImageView.setImageDrawable(resource);
                     }
                 });
 ```
